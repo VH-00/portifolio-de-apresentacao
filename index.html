@@ -1,15 +1,61 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Meu Site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vitor Hugo Leal Marques | Portfólio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Bem-vindo ao Meu Site</h1>
-    <p>Este é um projeto de exemplo para o meu portfólio.</p>
+  <header class="hero">
+    <div class="container">
+      <h1>Vitor Hugo Leal Marques</h1>
+      <p class="subtitle">Desenvolvedor Front-End</p>
+      <button id="theme-toggle" aria-label="Alternar tema">🌓</button>
+    </div>
   </header>
+
+  <main>
+    <section id="skills" class="section container">
+  <h2>Habilidades</h2>
+  <div class="skills-list">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer" class="skill-item" title="HTML5">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5 Logo" />
+    </a>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer" class="skill-item" title="CSS3">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3 Logo" />
+    </a>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer" class="skill-item" title="JavaScript">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript Logo" />
+    </a>
+    <a href="https://www.python.org/" target="_blank" rel="noopener noreferrer" class="skill-item" title="Python">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python Logo" />
+    </a>
+    
+    <a href="https://git-scm.com/" target="_blank" rel="noopener noreferrer" class="skill-item" title="Git">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git Logo" />
+    </a>
+  </div>
+</section>
+
+
+    <section id="projects" class="section container">
+      <h2>Projetos</h2>
+      <div class="projects-list" style="display:flex; flex-wrap: wrap;">
+        <!-- Projetos carregados via JS -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/seu-usuario" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="curriculo.pdf" target="_blank" rel="noopener noreferrer">Currículo</a>
+      <a href="https://github.com/seu-usuario" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
+    <p>&copy; 2025 Vitor Hugo Leal Marques</p>
+  </footer>
+
+  <script src="scripts.js"></script>
 </body>
 </html>

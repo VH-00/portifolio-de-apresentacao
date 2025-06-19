@@ -1,13 +1,248 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f3f3f3;
+/* Reset básico */
+* {
   margin: 0;
   padding: 0;
-  text-align: center;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-header {
-  background-color: #4a90e2;
-  color: white;
-  padding: 50px 20px;
+/* Variáveis para tema claro/escuro */
+:root {
+  --bg-color: #0f111a;
+  --text-color: #e0e0e0;
+  --accent-color: #137bf1;
+  --bg-secondary: #1a1f36;
+  --btn-bg: #182c66;
+  --btn-hover: #4a90e2;
+}
+
+[data-theme="light"] {
+  --bg-color: #ffffff;
+  --text-color: #111111;
+  --accent-color: #005296;
+  --bg-secondary: #f5f5f5;
+  --btn-bg: #e0e0e0;
+  --btn-hover: #0055cc;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Container padrão */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  background-color: var(--bg-secondary);
+  text-align: center;
+  position: relative;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.hero .subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--accent-color);
+}
+
+/* Botão tema */
+#theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: var(--btn-bg);
+  border: none;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  padding: 10px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#theme-toggle:hover {
+  background-color: var(--btn-hover);
+}
+
+/* Seções */
+.section {
+  margin: 50px 0;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 6px;
+  max-width: max-content;
+}
+
+/* Habilidades */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 1.1rem;
+}
+
+/* Projetos */
+.projects-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 25px;
+}
+
+.project-card {
+  background-color: var(--bg-secondary);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgb(0 0 0 / 0.3);
+}
+
+.project-card h3 {
+  margin-bottom: 10px;
+  color: var(--accent-color);
+}
+
+.project-card p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.project-card a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+}
+
+/* Rodapé */
+.footer {
+  text-align: center;
+  padding: 30px 0 10px;
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+.social-links a {
+  margin: 0 15px;
+  color: var(--accent-color);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--btn-hover);
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .projects-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.skills-list {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.skill-item {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  filter: drop-shadow(0 0 2px rgba(0,0,0,0.3));
+  animation: pulse 3s infinite ease-in-out;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  outline-offset: 3px;
+  border-radius: 8px;
+  text-decoration: none; /* Remove underline */
+}
+
+.skill-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.skill-item:hover,
+.skill-item:focus {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 8px var(--accent-color));
+  outline: none;
+}
+
+/* Animação pulse */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 3px var(--accent-color));
+  }
+  50% {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 10px var(--accent-color));
+  }
+}
+.project-item {
+  width: 300px;
+  margin: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.project-item img {
+  width: 100%;
+  display: block;
+  cursor: pointer;
+  transition: filter 0.3s ease;
+}
+
+.project-item:hover {
+  transform: translateY(-5px);
+}
+
+.project-item:hover img {
+  filter: brightness(0.9);
 }
