@@ -19,7 +19,7 @@ toggleButton.addEventListener('click', () => {
 const projects = [
   {
     title: "Site Institucional",
-    description: "Desenvolvimento de um site institucional com listagem dinâmica de vagas usando Google Sheets.",
+    description: "Desenvolvido com intenção de ser uma página de transparência e uma pagina informativa básica.",
     image: "imgs/pagina_inicial_ong.jpeg", // coloque a imagem correta aqui
     link: "https://vh-00.github.io/site-ong/"
   },
